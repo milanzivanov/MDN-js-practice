@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>asyn await fetch example</title>
+    <link href="https://fonts.googleapis.com/css?family=Faster+One" rel="stylesheet"> 
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+
+    <header></header>
+    <section></section>
+
+<script>
+// Asunc / Await / Fetch
+
+var requestURL = 'https://mdn.github.io/learning-area/javascript/oojs/json/superheroes.json';
+var header = document.querySelector('header');
+var section = document.querySelector('section');
+
+async function fetchUsers() {
+    const res = await fetch(requestURL);
+    const data = await res.json();
+    console.log(data);
+
+    var myH1 = document.createElement('h1');
+    myH1.textContent = data.squadName;
+    console.log(myH1.textContent);
+    header.appendChild(myH1);
+
+    var myPara = document.createElement('p');
+    myPara.textContent = 'Hometown: ' + data.homeTown + ' // Formed: ' + data.formed;
+    header.appendChild(myPara);
+
+    // =========
+    let heroes = data.members;
+    console.log(heroes);
+
+    for (let hero of heroes) {
+        let myArticle = document.createElement('article');
+        let myH2 = document.createElement('h2');
+        let myPara1 = document.createElement('p');
+        let myPara2 = document.createElement('p');
+        let myPara3 = document.createElement('p');
+        let myList = document.createElement('ul');
+
+        myH2.textContent = hero.name;
+        myPara1.textContent = 'Secret identity: ' + hero.secretIdentity;
+        myPara2.textContent = 'Age: ' + hero.age;
+        myPara3.textContent = 'Superpowers:';
+
+        let superPowers = hero.powers;
+        console.log(superPowers);
+
+        for (let skill of superPowers) {
+            var listItem = document.createElement('li');
+            listItem.textContent = skill;
+            myList.appendChild(listItem);
+            console.log(skill);
+        }
+
+        myArticle.appendChild(myH2);
+        myArticle.appendChild(myPara1);
+        myArticle.appendChild(myPara2);
+        myArticle.appendChild(myPara3);
+        myArticle.appendChild(myList);
+
+        section.appendChild(myArticle);
+    }
+
+}
+
+fetchUsers();
+
+</script>
+</body>
+</html>

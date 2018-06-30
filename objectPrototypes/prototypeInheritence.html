@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Prototype Inheritance explained</title>
+</head>
+<body>
+    <script>
+        // BASELINE
+        let Job = function() {
+            this.pays = true;
+        };
+
+        // PROTOTYPE METHOD
+        Job.prototype.print = function() {
+            console.log(this.pays ? 'Please hire me sir!!!' : 'No I do not like it sir!!!');
+        };
+
+        // SUBCLASS
+        let NewJob = function(title, pays) {
+            Job.call(this);
+            this.title = title;
+            this.pays = pays;
+        }
+
+        NewJob.prototype = Object.create(Job.prototype);
+        NewJob.prototype.constructor = NewJob;
+
+        NewJob.prototype.print = function() {
+            alert(this.pays ? this.title + ' Job is great hire me sir!!!' : 'Noup I do not like it sir!!!');
+        }
+
+
+        // Object.prototype.print = function() {
+        //     console.log('I am running the master Object');
+        // }
+
+
+        let angularDeveloper = new NewJob('Angular Developer', true);
+        console.log(angularDeveloper.print());
+        
+    </script>
+</body>
+</html>
