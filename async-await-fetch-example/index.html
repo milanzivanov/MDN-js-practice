@@ -34,7 +34,6 @@ async function fetchUsers() {
     myPara.textContent = 'Hometown: ' + data.homeTown + ' // Formed: ' + data.formed;
     header.appendChild(myPara);
 
-    // ========= whwn we have arrays in arrays
     let heroes = data.members;
     console.log(heroes);
 
@@ -54,6 +53,7 @@ async function fetchUsers() {
         let superPowers = hero.powers;
         console.log(superPowers);
 
+        // ========= whwn we have arrays in arrays
         for (let skill of superPowers) {
             var listItem = document.createElement('li');
             listItem.textContent = skill;
