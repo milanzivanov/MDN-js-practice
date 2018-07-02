@@ -83,6 +83,8 @@
 
     var person1 = new Person('Tammi', 'Smith', 17, 'female', ['music', 'skiing', 'kickboxing']);
       
+
+    // Inheritance in JavaScript ========
     // The first thing we need to do is create a Teacher() constructor
     function Teacher(first, last, age, gender, interests, subject) {
         //  the call() function. This function basically allows you to call a function defined somewhere else, but in the current context
@@ -90,6 +92,21 @@
 
         this.subject = subject;
     }
+
+    // =====================================================
+    // Inheriting from a constructor with no parameters
+    // function Brick() {
+    //     this.width = 10;
+    //     this.height = 20;
+    // }
+
+    // function BlueGlassBrick() {
+    //     Brick.call(this);
+
+    //     this.opacity = 0.5;
+    //     this.color = 'blue';
+    // }
+    // ====================================================
 
     // Setting Teacher()'s prototype and constructor reference
     Teacher.prototype = Object.create(Person.prototype);
