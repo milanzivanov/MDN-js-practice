@@ -63,12 +63,12 @@
                 myPara3.textContent = 'Superpowers:';
 
 
-                // var superPowers = jsonObj.members[0].powers;
+                // let superPowers = jsonObj.members[0].powers;
                 let superPowers = hero.powers;
                 console.log(superPowers);
             
                 for (let skill of superPowers) {
-                    var listItem = document.createElement('li');
+                    let listItem = document.createElement('li');
                     listItem.textContent = skill;
                     myList.appendChild(listItem);
                     console.log(skill);
@@ -86,24 +86,24 @@
 
         // ======== their way with classic for loop ======== //
         // function showHeroes(jsonObj) {
-        //     var heroes = jsonObj['members'];
+        //     let heroes = jsonObj['members'];
 
-        //     for (var i = 0; i < heroes.length; i++) {
-        //         var myArticle = document.createElement('article');
-        //         var myH2 = document.createElement('h2');
-        //         var myPara1 = document.createElement('p');
-        //         var myPara2 = document.createElement('p');
-        //         var myPara3 = document.createElement('p');
-        //         var myList = document.createElement('ul');
+        //     for (let i = 0; i < heroes.length; i++) {
+        //         let myArticle = document.createElement('article');
+        //         let myH2 = document.createElement('h2');
+        //         let myPara1 = document.createElement('p');
+        //         let myPara2 = document.createElement('p');
+        //         let myPara3 = document.createElement('p');
+        //         let myList = document.createElement('ul');
 
         //         myH2.textContent = heroes[i].name;
         //         myPara1.textContent = 'Secret identity: ' + heroes[i].secretIdentity;
         //         myPara2.textContent = 'Age: ' + heroes[i].age;
         //         myPara3.textContent = 'Superpowers:';
 
-        //         var superPowers = heroes[i].powers;
-        //         for (var j = 0; j < superPowers.length; j++) {
-        //         var listItem = document.createElement('li');
+        //         let superPowers = heroes[i].powers;
+        //         for (let j = 0; j < superPowers.length; j++) {
+        //         let listItem = document.createElement('li');
         //         listItem.textContent = superPowers[j];
         //         myList.appendChild(listItem);
         //         }

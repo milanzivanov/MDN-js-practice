@@ -16,21 +16,21 @@
 <script>
 // Asunc / Await / Fetch
 
-var requestURL = 'https://mdn.github.io/learning-area/javascript/oojs/json/superheroes.json';
-var header = document.querySelector('header');
-var section = document.querySelector('section');
+let requestURL = 'https://mdn.github.io/learning-area/javascript/oojs/json/superheroes.json';
+let header = document.querySelector('header');
+let section = document.querySelector('section');
 
 async function fetchUsers() {
     const res = await fetch(requestURL);
     const data = await res.json();
     console.log(data);
 
-    var myH1 = document.createElement('h1');
+    let myH1 = document.createElement('h1');
     myH1.textContent = data.squadName;
     console.log(myH1.textContent);
     header.appendChild(myH1);
 
-    var myPara = document.createElement('p');
+    let myPara = document.createElement('p');
     myPara.textContent = 'Hometown: ' + data.homeTown + ' // Formed: ' + data.formed;
     header.appendChild(myPara);
 
@@ -55,7 +55,7 @@ async function fetchUsers() {
 
         // ========= whwn we have arrays in arrays
         for (let skill of superPowers) {
-            var listItem = document.createElement('li');
+            let listItem = document.createElement('li');
             listItem.textContent = skill;
             myList.appendChild(listItem);
             console.log(skill);
