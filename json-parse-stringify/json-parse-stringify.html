@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>json-parse-stringify</title>
+</head>
+<body>
+    <h3>JSON.parse() and JSON.stringify()</h3>
+
+    <script>
+        const myObj = {
+            name: 'Skipi',
+            age: 3,
+            favoriteFood: 'smoki'
+        };
+
+        const myObjStr = JSON.stringify(myObj);
+        // res {"name":"Skipi","age":3,"favoriteFood":"smoki"}
+        console.log(myObjStr);
+
+        // {name: "Skipi", age: 3, favoriteFood: "smoki"}
+        console.log(JSON.parse(myObjStr));
+
+
+        // === can also be used with Arrays ===
+
+        const myArr = ['slanina', 'jaja', 'tikvica'];
+        const myArrString = JSON.stringify(myArr);
+        console.log(myArrString);
+        
+        console.log(JSON.parse(myArrString));
+
+        // === JSON.parse() ===
+
+        const user = {
+            name: "Milan",
+            email: "milan@milan.com",
+            plan: "angular developer"
+        };
+
+        const userString = JSON.stringify(user);
+        // console.log(userString);
+        
+        const result = JSON.parse(userString, (key, value) => {
+            if (typeof value === 'string') {
+                return value.toUpperCase();
+            }
+            return value;
+        });
+
+        console.log(result);
+
+
+
+        // === JSON.stringify() ===
+        // JSON.stringify() can take two additional arguments, the first one being a replacer function and the second a String or Number value to use as a space in the returned string.
+
+        const user2 = {
+            id: 35,
+            name: "Miki",
+            email: "miki@miki.com"
+        };
+
+        function replacer(key, value) {
+            console.log(typeof value);
+            if(key === "email") {
+                return undefined;
+            }
+            return value;
+        }
+
+        const userString2 = JSON.stringify(user2, replacer);
+        console.log(userString2);
+        
+        
+    </script>
+</body>
+</html>
