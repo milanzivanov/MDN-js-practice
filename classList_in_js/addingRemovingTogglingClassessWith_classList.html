@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>classList adding Removing</title>
+    <style>
+
+        .shades.class.cool {
+            display: none;
+        }
+        .shades.class.cool.test-toggle {
+            color: indianred;
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <h3>
+        Adding, Removing & Toggling Classes With classList in JavaScript
+    </h3>
+    <p>
+        <a href="https://alligator.io/js/classlist/">link</a>
+    </p>
+    <button>Click me for toggling</button>
+    <div class="cool new shades">
+        🕶️
+        <p>test toggle</p>
+    </div>
+    <script>
+        let shadesEl = document.querySelector('.cool');
+        console.log(shadesEl.classList);
+        console.log(shadesEl.classList[1]);
+
+        // add()
+        shadesEl.classList.add('added', 'class');
+        console.log(shadesEl);
+
+        // contains
+        console.log(shadesEl.classList.contains('look')); // false
+
+        // remove
+        shadesEl.classList.remove('cool', 'new');
+        console.log(shadesEl);
+
+        // toggle
+        // Tadious toggle
+        if(shadesEl.classList.contains('added')) {
+            shadesEl.classList.remove('added');
+        } else {
+            shadesEl.classList.add('added');
+        }
+
+        console.log(shadesEl);
+        
+
+        // …you can simply use classList.toggle instead. Say something like this on a button click:
+        let btn = document.querySelector('button');
+        btn.addEventListener('click', () => {
+            shadesEl.classList.toggle('test-toggle')
+            });
+
+
+        // second toggle
+        let someCondition;
+
+        let b = shadesEl.classList.toggle('cool', !!someCondition);
+        console.log(b);
+        // false, `someCondition` is undefined and evaluates to false, class is removed
+
+        someCondition = 'I wear my sunglasses at night';
+
+        let c = shadesEl.classList.toggle('cool', !!someCondition);
+        console.log(c);
+        // true, `someCondition` evaluates to true, class is added.
+
+        // Using !! in front of an expression coerces the value to a boolean.
+    </script>
+</body>
+</html>
