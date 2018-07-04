@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <h3>Simple example reading some object element to html</h3>
+    <header></header>
+
+    <script>
+    
+        const user = {
+            id: 35,
+            name: "kiki",
+            email: "kiki@miki.com"
+        };
+
+        let header = document.querySelector('header');
+
+        let myH1 = document.createElement('h1');
+        let myA = document.createElement('a');
+
+        // myA.setAttribute("href", "kiki@miki.com");
+        myA.href = 'user.email';
+
+        myH1.textContent = user.name;
+        myA.textContent = user.name;
+
+        console.log(myH1.textContent);
+        header.appendChild(myH1);
+        header.appendChild(myA);
+
+    </script>
+</body>
+</html>
