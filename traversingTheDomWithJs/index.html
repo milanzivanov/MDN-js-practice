@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>traversingTheDom</title>
+</head>
+<body>
+    <!-- https://zellwk.com/blog/dom-traversals/?ck_subscriber_id=58280761 -->
+    <h2>You can traverse in three directions:</h2>
+    <ul>
+        <li>Downwards</li>
+        <li>Sideways</li>
+        <li>Upwards</li>
+    </ul>
+
+    <h2>Traversing downwards</h2>
+    <p>There are two methods to traverse downwards:</p>
+
+    <ul>
+        <li>querySelector or querySelectorAll</li>
+        <li>children</li>
+    </ul>
+
+
+
+    <h2>====querySelector or querySelectorAll</h2>
+    <p>To traverse downwards from a specific element, you can use <em>element.querySelector</em> or <em>element.querySelectorAll</em> .</p>
+
+
+   
+
+    <div class="component">
+        <h2 class="component__title">Component title</h2>
+    </div>
+
+    <h2>children</h2>
+
+    <ul class="list">
+        <li><a href="#">Link 1</a></li>
+        <li><a href="#">Link 2</a></li>
+        <li><a href="#">Link 3</a></li>
+        <li><a href="#">Link 4</a></li>
+        <li><a href="#">Link 5</a></li>
+    </ul>
+
+    <h2>Selecting a specific child</h2>
+    <ul class="list-specific">
+        <li><a href="#">Link 1</a></li>
+        <li><a href="#">Link 2</a></li>
+        <li><a href="#">Link 3</a></li>
+        <li><a href="#">Link 4</a></li>
+        <li><a href="#">Link 5</a></li>
+    </ul>
+
+    <h2>Traversing upwards</h2>
+    <p>There are two methods to traverse upwards:</p>
+    <ul>
+        <li>parentElement</li>
+        <li>closest</li>
+    </ul>
+    <h3>parentElement</h3>
+    <ul class="list-parent">
+        <li><a href="#">Link 1</a></li>
+        <li><a href="#">Link 2</a></li>
+        <li><a href="#">Link 3</a></li>
+        <li><a href="#">Link 4</a></li>
+        <li><a href="#">Link 5</a></li>
+    </ul>
+
+    <h3>closest</h3>
+    <ul class="list">
+        <li><a href="#">Link 1</a></li>
+        <li><a href="#">Link 2</a></li>
+        <li><a href="#">Link 3</a></li>
+        <li><a href="#">Link 4</a></li>
+        <li><a href="#">Link 5</a></li>
+    </ul>
+
+    <h2>Traversing sideways</h2>
+    <ul>
+        <li>nextElementSibling</li>
+        <li>previousElementSibling</li>
+        <li>parentElement, children, and index</li>
+    </ul>
+
+    <!-- nextElementSibling -->
+
+    <ul class="list">
+        <li><a href="#">Link 1</a></li>
+        <li><a href="#">Link 2</a></li>
+        <li><a href="#">Link 3</a></li>
+        <li><a href="#">Link 4</a></li>
+        <li><a href="#">Link 5</a></li>
+    </ul>
+
+    <h2>Combining parentElement, children, and index</h2>
+
+    <ul class="list-combining">
+        <li><a href="#">Link 1</a></li>
+        <li><a href="#">Link 2</a></li>
+        <li><a href="#">Link 3</a></li>
+        <li><a href="#">Link 4</a></li>
+        <li><a href="#">Link 5</a></li>
+    </ul>
+    <script src="./main.js"></script>
+</body>
+</html>
